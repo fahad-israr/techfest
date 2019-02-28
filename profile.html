@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+    <!--<![endif]-->
+
+    <head>
+
+        <!--- basic page needs
+   ================================================== -->
+        <meta charset="utf-8">
+        <title>Innovision'18</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- mobile specific metas
+   ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- CSS
+   ================================================== -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/aos.css">
+        <link rel="stylesheet" href="css/hover-min.css">
+
+        <!-- script
+   ================================================== -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/pace.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <script src="./js/sweetalert.min.js"></script>
+
+        <!-- favicons
+	================================================== -->
+        <link rel="shortcut icon" href="images/Innovision_Logo_og.png" type="image/png">
+        <link rel="icon" href="images/Innovision_Logo_og.png" type="image/png">
+        <!-- fonts 
+	===============================================-->
+        <link href="https://fonts.googleapis.com/css?family=Quicksand|Source+Sans+Pro" rel="stylesheet">
+
+        <style>
+            .glow {
+display: inline-block;
+border-radius: 5px;
+color: #fff;
+text-align: center;
+-webkit-animation: glow 2s ease-in-out infinite alternate;
+-moz-animation: glow 2s ease-in-out infinite alternate;
+animation: glow 2s ease-in-out infinite alternate;
+}
+.glow1 {
+display: inline-block;
+border-radius: 5px;
+color: #fff;
+-webkit-animation: glow1 1s ease-in-out infinite alternate;
+-moz-animation: glow1 1s ease-in-out infinite alternate;
+animation: glow1 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+from {
+text-shadow: 0 0 0px #fff, 0 0 20px #fff, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 60px black, 0 0
+70px black;
+}
+to {
+text-shadow: 0 0 20px #fff, 0 0 30px #0dcfdd, 0 0 40px #0dcfdc, 0 0 50px #0dcfdc, 0 0 60px #0dcfdc, 0 0 70px #0dcfdc, 0
+0 80px #0dcfdc;
+}
+}
+
+@-webkit-keyframes glow1 {
+from {
+text-shadow: 0 0 0px #fff, 0 0 10px #fff, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0 10px black, 0 0
+10px black;
+}
+to {
+text-shadow: 0 0 2px #fff, 0 0 2px #0dcfdd, 0 0 2px #0dcfdc, 0 0 2px #0dcfdc, 0 0 2px #0dcfdc, 0 0 2px #0dcfdc, 0
+0 2px #0dcfdc;
+}
+}
+
+            *{box-sizing: border-box; font-family: 'Quicksand';}
+            
+            .card{
+                margin: 20px 15px;
+                height: 300px;
+                width: 300px;
+                border: 1px solid white;
+                border-radius: 15px;
+                text-align: center;
+                padding-top: 25px;
+                display: inline-block;
+                cursor: pointer;
+                animation-duration: 0.75s;
+            }
+            
+            
+            
+            .hvr-grow {
+              display: inline-block;
+              vertical-align: middle;
+              -webkit-transform: perspective(1px) translateZ(0);
+              transform: perspective(1px) translateZ(0);
+              box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+              -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+              -webkit-transition-property: transform;
+              transition-property: transform;
+            }
+            
+            .hvr-grow:hover,
+            .hvr-grow:focus,
+            .hvr-grow:active {
+              -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+            }
+            
+            .hvr-grow-rotate-right {
+              display: inline-block;
+              vertical-align: middle;
+              -webkit-transform: perspective(1px) translateZ(0);
+              transform: perspective(1px) translateZ(0);
+              box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+              -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+              -webkit-transition-property: transform;
+              transition-property: transform;
+            }
+            .hvr-grow-rotate-right:hover,
+            .hvr-grow-rotate-right:focus,
+            .hvr-grow-rotate-right:active {
+              -webkit-transform: scale(1.1) rotate(4deg);
+              transform: scale(1.1) rotate(4deg);
+            }
+            
+            .hvr-grow-rotate-left {
+              display: inline-block;
+              vertical-align: middle;
+              -webkit-transform: perspective(1px) translateZ(0);
+              transform: perspective(1px) translateZ(0);
+              box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+              -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+              -webkit-transition-property: transform;
+              transition-property: transform;
+            }
+            .hvr-grow-rotate-left:hover,
+            .hvr-grow-rotate-left:focus,
+            .hvr-grow-rotate-left:active {
+              -webkit-transform: scale(1.1) rotate(-4deg);
+              transform: scale(1.1) rotate(-4deg);
+            }
+            
+            .vis{
+                visibility: visible;
+            }
+            
+            
+            .title{
+                margin: 50px;
+                font-size: 40px;
+                color: black!important;
+                animation-duration: 0.75s;
+            }
+            
+   
+            @media only screen and (max-width: 768px){
+               
+                .title{
+                    text-align: center;
+                    color: white;
+                }
+            }
+            .gotop{
+                position: fixed;
+                top: 550px;
+                left: 1250px;
+            }
+            
+         	#portfolio .intro-wrap {
+		  		padding: 15rem 0 22.5rem;
+		  		background: black;
+			}
+
+			.container p{
+                text-align: center;
+            }
+            .header-menu-trigger{
+              padding:15px;
+            }
+            #qr{
+              margin: 1em 0em;
+            }
+            .basic_info h1{
+              color: #FFFFFF;
+            }
+            .basic_info h3{
+              color:#009999;
+            }
+            .basic_info p{
+              margin: 1.5em 0em 1em;
+            }
+            .events_button{
+              margin-top: 5em;
+            }
+            .events_button h1{
+              color: #FFFFFF;
+            }
+            .fa-sign-out{
+              margin:10px;
+              font-size: 25px;
+            }
+            #reg_events{
+              margin-top: 5em
+            }
+        </style>
+        <style>
+            /*.loader1 {
+            position: fixed;
+            background: url('orig2.gif') 50% 50% no-repeat rgb(249, 249, 249);
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999 !important;
+            opacity: 1;
+            background-color: black;
+            display: block;
+        }*/
+    .f-links {
+        padding: 0.2em;
+        display: block;
+        color: white;
+        outline: none;
+    }
+
+    .f-links:hover {
+        color: #F89E0F;
+        text-decoration: none;
+    }
+
+
+    .card:hover {
+        bottom: 7px;
+
+    }
+
+    .card:active {
+        transform: translateY(10px);
+    }
+
+
+  
+
+    #menu-nav-wrap {
+        width: 25%;
+        background-color: #061115;
+        opacity: 0.95;
+    }
+
+  
+    #nitr_logo {
+        width: 5em;
+        left: 0;
+        margin-left: -200px;
+        margin-top: -20px;
+    }
+
+    .copyright {
+        margin-left: -170px;
+    }
+
+    @media screen and (max-width: 767px) {
+        #menu-nav-wrap {
+            width: 100%
+        }
+
+        #bars {
+            margin-left: 1.5em;
+        }
+
+        #nitr_logo {
+            width: 6em;
+            margin-left: 0px;
+            padding: 5px;
+
+        }
+
+        .copyright {
+            margin-left: 0px;
+        }
+
+    }
+</style>
+
+    </head>
+
+    <body>
+        <!-- header 
+	       ================================================== -->
+        <header>
+
+            <div class="header-logo">
+                <!-- <a id="nitr" href="javascript:void(0)">Infinity</a> -->
+                <a id="inno" href="javascript:void(0)">Infinity</a>
+            </div>
+
+            <a id="header-menu-trigger" href="#0">
+                <span class="header-menu-text" style="color: white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;margin-top: -0.16em">Menu</span>
+                <span class="fa fa-bars" id="bars" style="font-size: 1.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"></span>
+            </a>
+
+            <nav id="menu-nav-wrap">
+                <a href="#0" class="close-button" title="close">
+                    <span>Close</span>
+                </a>
+
+                <h3>INNOVISION '18</h3>
+
+
+                <ul class="nav-list">
+                    <li class="current">
+                        <a style="text-decoration: none;" href="./index.html" title="">Home</a>
+                    </li>
+                    <li class="profile">
+                        <a style="text-decoration: none;color:white" href="./profile.html" title="">Profile</a>
+                    </li>
+                    <li>
+                        <a style="text-decoration: none;" href="./eventFinal.html" title="">Events |
+                            Workshops |
+                            Exhibitions</a>
+                    </li>
+
+                    <li class="signed_out">
+                        <a style="text-decoration: none;" href="./registration.html" title="">Sign In | Sign Up</a>
+                    </li>
+
+                    <li class="ca">
+                        <a style="text-decoration: none;" href="./ca/index.html" title="">Campus Ambassador Signup</a>
+                    </li>
+                    <li>
+                        <a style="text-decoration: none;" href="./sponsor.html">Sponsors</a>
+                    </li>
+                    <li>
+                        <a style="text-decoration: none;color:white" href="./isr.html">Innovision Social Regime</a>
+                    </li>
+                    <li>
+                        <a style="text-decoration: none;" href="./faq.html">FAQ | Help</a>
+                    </li>
+                    <li class="signed_in signout_opt signout">
+                        <a style="text-decoration: none;" href="javascript:void(0)" title="">Sign Out</a>
+                    </li>
+                    <li>
+                        <a class="glow1" style="text-decoration: none;" href="https://fastechfashions.com/quickview/catalog/5bd5d58551a6654d2649e5e0" title="">Wanna grab a T-shirt?</a>
+                    </li>
+                    
+                </ul>
+                <script>
+                    $(document).ready(function () {
+                        if (localStorage.token == null || localStorage.token == "" || !(localStorage.token)) {
+                            location.href = './registration.html';
+                        } else {
+                            $(".signed_in").css("display", "block");
+                            $(".signed_out").css("display", "none");
+                            $(".profile").css("display", "block");
+                            $(".ca").css("display", "none");
+                        }
+
+                    });
+
+                </script>
+                <script>
+                    $(document).on("click", ".signout", function () {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('innoID');
+                        location.href = './index.html';
+                    });
+
+                </script>
+                <ul class="header-social-list">
+                    <li>
+                        <a href="https://www.facebook.com/innonitr/">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/innonitr">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/inno.nitr/">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+            <!-- end #menu-nav-wrap -->
+
+        </header>
+        <!-- end header -->
+
+        <script src="./js/ajax/selectedCA.js"></script>
+        <script src="./js/ajax/user_profile_read.js"></script>
+        <script>
+            //window.Data;
+            $(document).on("click", "#yes", function () {
+                $("#ca").css("display", "block");
+                $("#reg_ca").css("display", "block");
+            });
+
+            $(document).on("click", "#reg_ca", function () {
+
+                $.ajax({
+                    type: "POST",
+                    url: "./apis/panels/CASelection/submitCA.php",
+                    data: {
+                        ca_id: $("#ca").val(),
+                        token: localStorage.token
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        var d = JSON.parse(data);
+                        if (d.status == "success") {
+                            //swal(d.result, ":)", "success");
+                            swal({
+                                    icon: "success",
+                                    title: d.result,
+                                    text: ":)",
+                                    buttons: {
+                                        //cancel: "Cancel",
+                                        sure: "Sure"
+                                    },
+                                })
+                                .then((value) => {
+                                    switch (value) {
+
+                                        case "sure":
+                                            //ajax
+                                            location.reload(true);
+                                            break;
+                                        default:
+                                            location.reload(true);
+                                            break;
+
+
+                                    }
+                                });
+
+
+                        } else {
+                            swal(d.result, ":(", "error");
+                        }
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+
+                });
+            });
+
+            function show_ca(dataArray) {
+                var temp = '';
+                for (var i = 0; i < dataArray.length; i++) {
+                    temp = temp + '<option value="' + dataArray[i].ca_applicant_id + '">' + dataArray[i].ca_applicant_id +
+                        ". " + dataArray[i].q1 +
+                        '</option>';
+                }
+                $("#ca").append(temp);
+            }
+
+            function display_profile(Data) {
+                console.log(Data.result);
+                localStorage.innoID = Data.result.inno_id;
+                if (Data.result.payment_status.localeCompare("N") == 0) {
+                    localStorage.name = Data.result.name;
+                    localStorage.email = Data.result.email;
+                    localStorage.phone = Data.result.phone;
+
+                    $("#pay").css("display", "block");
+                    $("#paid").css("display", "none");
+                } else
+                if (Data.result.payment_status.localeCompare("Y") == 0) {
+                    $("#paid").css("display", "block");
+                    $("#pay").css("display", "none");
+                }
+                //FEEDBACK
+                // if (Data.result.feedback_status == "0") {
+                //     $("#feedback").css("display", "block");
+                // } else {
+                //     $("#download").html('Download Your Certificate <a style="color:white" href="./images/certificates/' +
+                //         localStorage.innoID + '.jpg" download>Here</a>')
+                //     $("#download").css("display", "block");
+                // }
+                //THROUGH CA REGISTRATION
+                if (Data.result.through_ca_id == "0") {
+                    $("#find_ca").css("display", "block");
+                } else {
+                    $.ajax({
+                        type: "GET",
+                        url: "./apis/panels/CASelection/CAdetail.php?q=" + Data.result.through_ca_id,
+                        success: function (data) {
+                            var d = JSON.parse(data);
+                            $("#your_ca").html("You are registered through " + d.result[0].q1.toUpperCase());
+                            $("#find_ca").html(
+                                'Wanna edit choice? <a href = "javascript:void(0)" style = "color:white;font-weight:bold" id = "yes"> Click here </a>'
+                            );
+                            $("#find_ca").css("display", "block");
+                            console.log(data);
+                        },
+                        error: function (data) {
+
+                        }
+                    });
+                    $("#your_ca").css("display", "block");
+                }
+                $("#pname").html(Data.result.name);
+                $("#pinno_id").html("Inno ID: " + Data.result['0']);
+                $("#qr").attr("src", Data.result.qr_code_path);
+                $("#pinsti").html(Data.result.college);
+                $("#pmail").html(Data.result.email);
+                $("#pphone").html(Data.result.phone);
+
+                $.ajax({
+                    type: "GET",
+                    url: "./apis/events/fetchRegisteredEvents.php?q=" + localStorage.innoID,
+                    success: function (data) {
+                        var data = JSON.parse(data).result;
+                        registeredEvents(data);
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+                })
+            }
+
+        </script>
+        <!-- portfolio
+   ================================================== -->
+        <section id="portfolio" style="overflow: hidden;">
+
+            <div class="intro-wrap">
+
+                <div class="row narrow section-intro with-bottom-sep animate-this">
+                    <div class="col-twelve">
+                        <h1 id="pname"></h1>
+                        <h3 id="pinno_id"></h3>
+                        <img id="qr" class="img-thumbnail" src="">
+                    </div>
+                </div> <!-- end row section-intro -->
+                <center class="basic_info">
+                    <h3 class="glow" style="color:white;display:none" id="your_ca"></h3>
+                    <h3 class="glow" style="color:white;display:none" id="find_ca">Are You Registered Through a CA ? <a
+                            href="javascript:void(0)" style="color:white;font-weight:bold" id="yes">Click here</a></h3>
+                    <select name="ca_id" id="ca" style="color:white;font-size:1em;font-weight:bold;background-color:black;display:none">
+                        <option value="0">--Select Name Below --</option>
+                    <option value="0">--NONE--</option>
+                    </select>
+                    <p id="reg_ca" style="display:none"><button class="btn btn-sm btn-info" style="color:black">Submit</button></p>
+                    <h1>PAYMENT STATUS</h1>
+                    <p class="lead" id="pay" style="display:none"><button class="btn btn-lg btn-warning pay_now" style="color:black">PAY
+                            NOW</button></p>
+                    <p style="color:cyan;font-size:2em;display:none;font-weight:bold" id="paid">YOU HAVE PAID : )</p>
+                    <h1>Basic Information</h1>
+                    <p class="lead">Institute</p>
+                    <h3 id="pinsti"></h3>
+                    <p class="lead">Email</p>
+                    <h3 id="pmail"></h3>
+                    <p class="lead">Contact No</p>
+                    <h3 id="pphone"></h3>
+                </center>
+                <script src="./js/ajax/payment.js"></script>
+
+
+            </div> <!-- end intro-wrap -->
+            <script>
+                function registeredEvents(dataArr) {
+                    console.log(dataArr);
+                    for (var i = 0; i < dataArr.length; i++) {
+                        $.ajax({
+                            type: "GET",
+                            url: "./apis/events/fetchIndividualEvent.php?q=" + dataArr[i][2],
+                            success: function (data) {
+                                var dataArray = JSON.parse(data);
+                                if (dataArray["status"] == "success") {
+                                    var eventObj = dataArray["result"];
+                                    populate(eventObj);
+                                    //console.log(dataArray);
+                                }
+                            }
+                        });
+                    }
+
+                }
+
+                function populate(eventObj) {
+                    //console.log(eventObj);
+                    var temp = '<a href="javascript:void(0)" class="reg_event" value="' + eventObj.eid +
+                        '" target="_blank"> <div class = "card wow fadeInLeft hvr-grow-rotate-right"><img class = "img-responsive" src = "' +
+                        eventObj.image_path.slice(4) + '"></div></a>';
+                    $("#event_reg").append(temp);
+
+                }
+                $(document).on("click", ".reg_event", function () {
+                    localStorage.eid = $(this)[0].attributes[2].value;
+                    location.href = './event_individual.html';
+                });
+
+            </script>
+            <div class="container-fluid">
+                <div class="wow">
+
+
+                    <section id="reg_events">
+                        <hr style="visibility: hidden;" />
+                        <h1 class="title" data-aos="fade-left">Registered Events</h1>
+
+
+                        <center id="event_reg">
+
+                        </center>
+
+                    </section>
+                </div>
+            </div>
+
+            </div>
+            <!-- </div> -->
+            <!-- end twelve -->
+            <!-- </div> -->
+            <!-- end portfolio-content -->
+
+
+
+
+
+            <!-- footer
+   ================================================== -->
+
+            <!-- <div id="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#menu">
+                    <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                </a>
+            </div> -->
+
+            <!-- <div id="preloader">
+                <div id="loader"></div>
+            </div> -->
+
+            <div class="footer-bottom" style="background-color: #111111;margin-bottom:-3.8em;margin-top:0em">
+                <!-- contact
+   ================================================== -->
+                <section id="contact">
+
+                    <div class="overlay"></div>
+
+                    <div class="row narrow section-intro" style="padding: 1em;">
+                        <div class="col-twelve">
+                            <!-- 	<h3>Contact</h3> -->
+                            <h1 style="font-family: 'Source Sans Pro', sans-serif;">Get In Touch.</h1>
+
+                            <p style="font-family: 'Source Sans Pro', sans-serif;" class="lead">How can we help you? We
+                                are always
+                                available.</p>
+                        </div>
+                    </div>
+                    <!-- end section-intro -->
+
+                    <div class="row" style="margin-top: -1.5em;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3" style="text-align: center;">
+                            <h2 style="color: white;font-family: 'Source Sans Pro', sans-serif;">Student Activity
+                                Center
+                                <br>
+                                <p style="color: white;font-family: 'Source Sans Pro', sans-serif;font-size: 0.7em">National
+                                    Institute
+                                    of Technology
+                                    <br>Sector 1, Rourkela - 769008</p>
+                            </h2>
+                            <h3 style="color: white;font-family: 'Source Sans Pro', sans-serif;">
+                                <a href="mailto:contactus@innonitr.com" style="color:white;">contactus@innonitr.com</a>
+                            </h3>
+                        </div>
+                        <div class="col-md-4">
+                            <h1 style="color: white;text-align: center;">
+                                <a style="text-decoration: none;" href="https://www.facebook.com/innonitr/">
+                                    <i class="fa fa-facebook-square f-links"></i>
+                                </a>
+                                <a style="text-decoration: none;" href="https://twitter.com/innonitr">
+                                    <i class="fa fa-instagram f-links"></i>
+                                </a>
+                                <a style="text-decoration: none;" href="https://www.instagram.com/inno.nitr/">
+                                    <i class="fa fa-twitter f-links"></i>
+                                </a>
+                            </h1>
+
+                        </div>
+                    </div>
+                </section>
+                <!-- end contact -->
+
+
+                <!-- footer
+   ==================	================================ -->
+                <footer>
+
+                    <div class="footer-bottom" style="background-color:#111111">
+
+                        <div class="row">
+                            <div class="col-two">
+                                <img src="./images/nitr_logo.png" id="nitr_logo">
+                            </div>
+                            <div class="col-ten">
+
+                                <div class="copyright">
+                                    <span>© National Institute of Technology, Rourkela 2018</span>
+                                    <span> Designed by
+                                        <a style="text-decoration: none">Technical Team, INNOVISION'18</a>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </footer>
+            </div>
+            <!-- end footer-bottom -->
+
+            <div id="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#portfolio">
+                    <i class="fa fa-long-arrow-up" style="font-size: 2.5em;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"
+                        aria-hidden="true"></i>
+                </a>
+            </div>
+
+
+            <!-- Java Script
+   ================================================== -->
+
+            <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+            <!-- <script  src="js/animation.js"></script> -->
+            <script src="js/plugins.js"></script>
+            <script src="js/main.js"></script>
+            <!-- <script src="wow.js"></script> -->
+
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+            <script src="js/wow.js"></script>
+
+            <script>
+                new WOW().init();
+
+            </script>
+
+            <script src="js/aos.js"></script>
+
+            <script type="text/javascript">
+                AOS.init({
+                    duration: 500,
+                });
+
+            </script>
+
+            <script>
+                $(document).ready(function () {
+
+                    $(".scroll").click(function (event) {
+                        event.preventDefault();
+
+                        $("body,html").animate({
+                            scrollTop: $(this.hash).offset().top
+                        }, 1000)
+
+                    });
+                });
+
+            </script>
+
+    </body>
+
+</html>

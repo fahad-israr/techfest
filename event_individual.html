@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+	<!--<![endif]-->
+
+	<head>
+
+		<!--- basic page needs
+   ================================================== -->
+		<meta charset="utf-8">
+		<title>Innovision'18</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/gridtab.min.css" />
+		<script type="text/javascript" src="js/gridtab.min.js"></script>
+		<script src="./js/sweetalert.min.js"></script>
+		<!-- favicons
+	================================================== -->
+		<link rel="shortcut icon" href="images/Innovision_Logo_og.png" type="image/png">
+		<link rel="icon" href="images/Innovision_Logo_og.png" type="image/png">
+		<!-- fonts 
+  ===============================================-->
+		<link href="https://fonts.googleapis.com/css?family=Quicksand|Source+Sans+Pro" rel="stylesheet">
+		<style type="text/css">
+			@media screen and (min-width: 768px) {
+				.custom {
+					display: block;
+				}
+
+				.mobile {
+					display: none;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				.custom {
+					display: none;
+				}
+
+				.mobile {
+					display: block;
+				}
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<script>
+			$(document).ready(function () {
+				$('#gridtab-1').gridtab({
+					grid: 3,
+					config: {
+						layout: 'tab',
+						speed: 500,
+						activeTab: 1
+					}
+				});
+			});
+
+		</script>
+		<script type="text/javascript" src="./js/ajax/event_individual.js"></script>
+		<script>
+			function populate(eventArr) {
+				//console.log(eventArr);
+				$("#ename").html(eventArr.title);
+				$(".poster").children("div").html("<img height='200' width='200' class='img-responsive' src='" + eventArr[
+					"image_path"].slice(4, ) + "'>");
+				var event_desc = (eventArr["description"]).split("\n");
+				var event_rules = (eventArr["rules"]).split("\n");
+				var event_judging_criteria = (eventArr["judging_criteria"]).split("\n");
+				for (var i = 0; i < event_desc.length; i++) {
+					$(".desc").append("<p>" + event_desc[i] + "</p>");
+				}
+				for (var i = 0; i < event_rules.length; i++) {
+					$(".rules").append("<p>" + event_rules[i] + "</p>");
+				}
+				for (var i = 0; i < event_judging_criteria.length; i++) {
+					$(".criteria").append("<p>" + event_judging_criteria[i] + "</p>");
+				}
+				if (eventArr['date1'] && eventArr['time1']) {
+					$(".details").append("<p>Day 1: " + eventArr["date"] + "</p> <p> Time: " + eventArr["time"] + " <p>Day 2: " +
+						eventArr["date1"] + " </p> <p> Time: " + eventArr["time1"] +
+						"</p><p>Venue: " + eventArr["venue"] + "</p>");
+				} else {
+
+
+					$(".details").append("<p>Date of Event: " + eventArr["date"] + "</p><p>Time of Event: " + eventArr["time"] +
+						"</p><p>Venue: " + eventArr["venue"] + "</p>");
+				}
+				$(".details_coordinator").append("<h2>Coordinator 1</h2><p>Name: " + eventArr["coordinatorName1"] +
+					"</p><p>Contact: " + eventArr["coordinatorContact1"] + "</p><h2>Coordinator 2</h2><p>Name: " + eventArr[
+						"coordinatorName2"] + "</p><p>Contact: " + eventArr["coordinatorContact2"] + "</p>");
+			}
+
+		</script>
+		<div class="container-fluid">
+			<div style="background-color: #111111;color: white;width: 100%;padding: 1em;text-align: center;">
+				<h1 id="ename"></h1>
+			</div>
+			<div class="row" style="margin:1em">
+				<div class="col-md-3 col-sm-12 custom" style="text-align: center;">
+					<button class="btn btn-lg back" style="background-color: #444444;border-radius: 0px;color:white">BACK TO EVENTS</button>
+				</div>
+				<div class="col-md-6 col-sm-12"></div>
+				<div class="col-md-3 col-sm-12" style="text-align: center;">
+					<button class="btn btn-lg register" style="background-color: #111111;border-radius: 0px;color:white">REGISTER</button>
+				</div>
+			</div>
+			<dl id="gridtab-1">
+				<dt>Home</dt>
+				<dd class="poster">
+					<div style="height: 200px;width: 200px;border: 1px solid grey">
+
+					</div>
+				</dd>
+
+				<dt>Description</dt>
+				<dd class="desc">
+					<!-- <p>This is the content for the Description tab.</p>
+      <p>This is the content for the Description tab.</p>
+      <p>This is the content for the Description tab.</p> -->
+				</dd>
+
+				<dt>Rules</dt>
+				<dd class="rules">
+					<!-- <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p>
+      <p>This is the content for the Rules tab.</p> -->
+				</dd>
+
+				<dt>Judging Criteria</dt>
+				<dd class="criteria">
+					<!-- <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p>
+      <p>This is the content for the Judging Criteria</p> -->
+				</dd>
+
+				<dt>Event Details</dt>
+				<dd class="details">
+					<!-- <p>This is the content for the Event Details</p>
+      <p>This is the content for the Event Details</p>
+      <p>This is the content for the Event Details</p>
+      <p>This is the content for the Event Details</p>
+      <p>This is the content for the Event Details</p> -->
+				</dd>
+
+				<dt>Coordinator Details</dt>
+				<dd class="details_coordinator">
+					<!-- <p>This is the content for the Co-ordinator's Details</p>
+      <p>This is the content for the Co-ordinator's Details</p>
+      <p>This is the content for the Co-ordinator's Details</p> -->
+				</dd>
+			</dl>
+
+		</div>
+		<div class="col-sm-12 mobile" style="text-align: center;margin: 1em 0em 2em;">
+			<button class="btn btn-lg back" style="background-color: #444444;border-radius: 0px;color:white">BACK TO EVENTS</button>
+		</div>
+		<script>
+
+
+		</script>
+		<script type="text/javascript">
+			$(document).on("click", ".back", function () {
+				location.replace("eventFinal.html");
+			});
+
+		</script>
+	</body>
+
+</html>
